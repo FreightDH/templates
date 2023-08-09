@@ -58,9 +58,9 @@ export const lockBody = (delay = 300) => {
 
 export const bodyLockToggle = (delay = 300) => {
   if (document.documentElement.classList.contains('lock')) {
-    bodyUnlock(delay);
+    unlockBody(delay);
   } else {
-    bodyLock(delay);
+    lockBody(delay);
   }
 };
 //----------------------------------------------------------------------

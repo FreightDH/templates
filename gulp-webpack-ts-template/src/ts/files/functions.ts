@@ -19,7 +19,7 @@ export function isWebp() {
 // МОДУЛИ БЛОКИРОВКИ ПРОКРУТКИ
 export let bodyLockStatus = true;
 
-export const bodyUnlock = (delay = 300) => {
+export const unlockBody = (delay = 300) => {
   const body = document.body;
   if (bodyLockStatus) {
     const lockPadding = document.querySelectorAll('[data-lp]');
@@ -38,7 +38,7 @@ export const bodyUnlock = (delay = 300) => {
   }
 };
 
-export const bodyLock = (delay = 300) => {
+export const lockBody = (delay = 300) => {
   const body = document.body;
   if (bodyLockStatus) {
     const lockPadding = document.querySelectorAll('[data-lp]');
@@ -60,9 +60,9 @@ export const bodyLock = (delay = 300) => {
 
 export const bodyLockToggle = (delay = 300) => {
   if (document.documentElement.classList.contains('lock')) {
-    bodyUnlock(delay);
+    lockBody(delay);
   } else {
-    bodyLock(delay);
+    unlockBody(delay);
   }
 };
 //----------------------------------------------------------------------
