@@ -67,6 +67,7 @@ function updateCheckedSelect(value, text) {
 
   customBody.textContent = text;
   optionChecked = value;
+  closeSelect();
 }
 
 function watchClickOutside(event) {
@@ -127,7 +128,7 @@ customOptionsList.forEach((option, index) => {
     const textValue = event.target.textContent;
 
     nativeSelect.value = dataValue;
-    updateCheckedSelect(value, textValue);
+    updateCheckedSelect(dataValue, textValue);
   });
 
   option.addEventListener('mouseenter', () => {
