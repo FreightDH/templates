@@ -80,5 +80,12 @@ export const shuffleArray = (array) => {
   return array;
 };
 //----------------------------------------------------------------------
+// СОЗДАНИЕ ЭЛЕМЕНТА
+export const createElement = (tag = 'div', classname = '', content = '') => {
+  const element = document.createElement(tag);
+  element.className = `${classname}`;
+  element.innerHTML = `${content}`;
 
+  return element;
+};
 //----------------------------------------------------------------------

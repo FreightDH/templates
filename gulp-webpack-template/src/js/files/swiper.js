@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 
-export function swiperInit() {
+export function initSwiper() {
   new Swiper('.slider__swiper', {
     modules: [Navigation, Pagination],
 
