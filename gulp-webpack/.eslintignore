@@ -1,5 +1,3 @@
-config/
+config/*
 .eslintrc.js
 gulpfile.js
-webpack.dev.js
-webpack.prod.js

@@ -51,13 +51,13 @@ export const jsDev = () => {
         app.plugins.notify.onError({
           title: 'JS',
           message: 'Error: <%= error.message %>',
-        }),
-      ),
+        })
+      )
     )
     .pipe(
       webpack({
         config: webPackConfigBeautify,
-      }),
+      })
     )
     .pipe(app.gulp.dest(app.path.build.js));
 };

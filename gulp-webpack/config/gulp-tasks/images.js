@@ -9,8 +9,8 @@ export const images = () => {
         app.plugins.notify.onError({
           title: 'IMAGES',
           message: 'Error: <%= error.message %>',
-        }),
-      ),
+        })
+      )
     )
     .pipe(app.plugins.newer(app.path.build.images))
     .pipe(app.plugins.if(app.isWebP, webp()))
@@ -23,7 +23,7 @@ export const images = () => {
         svgoPlugins: [{ removeViewBox: false }],
         interlaced: true,
         optimizationLevel: 3, // 0 to 7
-      }),
+      })
     )
     .pipe(app.gulp.dest(app.path.build.images))
     .pipe(app.gulp.src(app.path.src.svg))

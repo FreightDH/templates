@@ -8,8 +8,8 @@ export const html = () => {
         app.plugins.notify.onError({
           title: 'HTML',
           message: 'Error: <%= error.message %>',
-        }),
-      ),
+        })
+      )
     )
     .pipe(app.plugins.if(app.isWebP, webpHtmlNosvg()))
     .pipe(app.gulp.dest(app.path.build.html));

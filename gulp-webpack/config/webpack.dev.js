@@ -1,6 +1,4 @@
-import fs from 'fs';
 import FileIncludeWebpackPlugin from 'file-include-webpack-plugin-replace';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 
 import * as path from 'path';
@@ -9,26 +7,21 @@ const srcFolder = 'src';
 const buildFolder = 'dist';
 const rootFolder = path.basename(path.resolve());
 
-let pugPages = fs.readdirSync(srcFolder).filter((fileName) => fileName.endsWith('.pug'));
-let htmlPages = [];
-
-if (!pugPages.length) {
-  htmlPages = [
-    new FileIncludeWebpackPlugin({
-      source: srcFolder,
-      htmlBeautifyOptions: {
-        'indent-with-tabs': true,
-        indent_size: 3,
-      },
-      replace: [
-        { regex: '<link rel="stylesheet" href="css/style.min.css">', to: '' },
-        { regex: '../img', to: 'img' },
-        { regex: '@img', to: 'img' },
-        { regex: 'NEW_PROJECT_NAME', to: rootFolder },
-      ],
-    }),
-  ];
-}
+let htmlPages = [
+  new FileIncludeWebpackPlugin({
+    source: srcFolder,
+    htmlBeautifyOptions: {
+      'indent-with-tabs': true,
+      indent_size: 3,
+    },
+    replace: [
+      { regex: '<link rel="stylesheet" href="css/style.min.css">', to: '' },
+      { regex: '../img', to: 'img' },
+      { regex: '@img', to: 'img' },
+      { regex: 'NEW_PROJECT_NAME', to: rootFolder },
+    ],
+  }),
+];
 
 const paths = {
   src: path.resolve(srcFolder),
@@ -98,34 +91,10 @@ const config = {
           },
         ],
       },
-      {
-        test: /\.pug$/,
-        use: [
-          {
-            loader: 'pug-loader',
-          },
-          {
-            loader: 'string-replace-loader',
-            options: {
-              search: '@img',
-              replace: 'img',
-              flags: 'g',
-            },
-          },
-        ],
-      },
     ],
   },
   plugins: [
     ...htmlPages,
-    ...pugPages.map(
-      (pugPage) =>
-        new HtmlWebpackPlugin({
-          minify: false,
-          template: `${srcFolder}/${pugPage}`,
-          filename: `${pugPage.replace(/\.pug/, '.html')}`,
-        }),
-    ),
     new CopyPlugin({
       patterns: [
         {
