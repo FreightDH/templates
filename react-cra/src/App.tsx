@@ -1,11 +1,11 @@
-import styles from './App.module.scss';
+import cl from './App.module.scss';
 
 function App() {
   return (
     <>
-      <main className={styles.page}>
+      <main className={cl.page}>
         <div className="page__container">
-          <div className={styles.page__body}></div>
+          <div className={cl.page__body}></div>
         </div>
       </main>
     </>
