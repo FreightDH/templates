@@ -54,7 +54,14 @@
 }
 
 // Адаптивное свойство (clamp)
-@mixin adaptiveValue($property, $startSize, $minSize, $widthFrom: $containerWidth, $widthTo: $minWidth, $keepSize: 0) {
+@mixin adaptiveValue(
+  $property,
+  $startSize,
+  $minSize,
+  $widthFrom: $containerWidth,
+  $widthTo: $minWidth,
+  $keepSize: 0
+) {
   @if ($startSize == 0) {
     $startSize: 0.000001;
   }
@@ -80,13 +87,13 @@
   @if ($yIntersection == 0) {
     $yIntersection: 0.000001;
   }
-  $flyValue: #{rem($yIntersection)}" + " #{$slope * 100}vw;
+  $flyValue: #{rem($yIntersection)}' + ' #{$slope * 100}vw;
 
   // Получение значения свойства
-  $propertyValue: #{"clamp(" rem($minSize) "," $flyValue "," rem($startSize) ")"};
+  $propertyValue: #{'clamp(' rem($minSize) ',' $flyValue ',' rem($startSize) ')'};
   // Если отрицательные значения
   @if ($minSize > $startSize) {
-    $propertyValue: #{"clamp(" rem($startSize) "," $flyValue "," rem($minSize) ")"};
+    $propertyValue: #{'clamp(' rem($startSize) ',' $flyValue ',' rem($minSize) ')'};
   }
 
   // Если поддерживается clamp();
@@ -96,7 +103,10 @@
   // Если не поддерживается clamp();
   @supports not (#{$property}: $propertyValue) {
     #{$property}: calc(
-      #{rem($minSize)} + #{$addSize} * (100vw - #{rem($widthTo)}) / #{math.div($widthFrom, 16) - math.div($widthTo, 16)}
+      #{rem($minSize)} + #{$addSize} * (100vw - #{rem($widthTo)}) / #{math.div($widthFrom, 16) - math.div(
+          $widthTo,
+          16
+        )}
     );
   }
 

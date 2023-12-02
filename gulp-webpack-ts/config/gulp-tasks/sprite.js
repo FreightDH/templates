@@ -8,8 +8,8 @@ export const sprite = () => {
         app.plugins.notify.onError({
           title: 'SVG',
           message: 'Error: <%= error.message %>',
-        }),
-      ),
+        })
+      )
     )
     .pipe(
       svgSprite({
@@ -38,7 +38,7 @@ export const sprite = () => {
           },
           xmlDeclaration: false,
         },
-      }),
+      })
     )
     .pipe(app.gulp.dest(`${app.path.srcFolder}`));
 };

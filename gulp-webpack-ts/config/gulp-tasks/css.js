@@ -11,8 +11,8 @@ export const css = () => {
         app.plugins.notify.onError({
           title: 'CSS',
           message: 'Error: <%= error.message %>',
-        }),
-      ),
+        })
+      )
     )
     .pipe(app.plugins.if(app.isBuild, groupCssMediaQueries()))
     .pipe(
@@ -22,8 +22,8 @@ export const css = () => {
           grid: true,
           overrideBrowserslist: ['last 3 versions'],
           cascade: true,
-        }),
-      ),
+        })
+      )
     )
     .pipe(
       app.plugins.if(
@@ -33,9 +33,9 @@ export const css = () => {
           webpcss({
             webpClass: '.webp',
             noWebpClass: '.no-webp',
-          }),
-        ),
-      ),
+          })
+        )
+      )
     )
     .pipe(app.gulp.dest(app.path.build.css))
     .pipe(app.plugins.if(app.isBuild, cleanCss()))

@@ -12,8 +12,8 @@ export const ftp = () => {
         app.plugins.notify.onError({
           title: 'FTP',
           message: 'Error: <%= error.message %>',
-        }),
-      ),
+        })
+      )
     )
     .pipe(ftpConnect.dest(`/${app.path.ftp}/${app.path.rootFolder}`));
 };

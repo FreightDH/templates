@@ -19,7 +19,6 @@ export const path = {
   },
   src: {
     html: `${srcFolder}/*.html`,
-    pug: `${srcFolder}/pug/*.pug`,
     js: `${srcFolder}/js/*.js`,
     scss: `${srcFolder}/scss/style.scss`,
     images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
