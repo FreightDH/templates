@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve --open --config ./config/webpack.config.js --env mode=dev",
     "build": "webpack --config ./config/webpack.config.js --env mode=prod",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts",
+    "format": "prettier . --write"
   },
   "author": "Max Zolotkov",
   "devDependencies": {
