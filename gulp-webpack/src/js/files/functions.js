@@ -17,20 +17,23 @@ export function isWebp() {
 }
 //----------------------------------------------------------------------
 // МОДУЛИ БЛОКИРОВКИ ПРОКРУТКИ
-export let bodyLockStatus = true;
+export let scrollLockStatus = true;
 
-export const unlockBody = (delay = 300) => {
+export const unlockScroll = (delay = 300) => {
   const body = document.querySelector('body');
+  
   if (bodyLockStatus) {
     const lockPadding = document.querySelectorAll('[data-lp]');
+    
     setTimeout(() => {
-      for (let index = 0; index < lockPadding.length; index++) {
-        const el = lockPadding[index];
+      for (let i = 0; i < lockPadding.length; i++) {
+        const el = lockPadding[i];
         el.style.paddingRight = '0px';
       }
       body.style.paddingRight = '0px';
       document.documentElement.classList.remove('lock');
     }, delay);
+
     bodyLockStatus = false;
     setTimeout(() => {
       bodyLockStatus = true;
@@ -38,14 +41,17 @@ export const unlockBody = (delay = 300) => {
   }
 };
 
-export const lockBody = (delay = 300) => {
+export const lockScroll = (delay = 300) => {
   const body = document.querySelector('body');
+  
   if (bodyLockStatus) {
     const lockPadding = document.querySelectorAll('[data-lp]');
-    for (let index = 0; index < lockPadding.length; index++) {
-      const el = lockPadding[index];
+    
+    for (let i = 0; i < lockPadding.length; i++) {
+      const el = lockPadding[i];
       el.style.paddingRight = `${window.innerWidth - document.querySelector('.wrapper').offsetWidth}px`;
     }
+
     body.style.paddingRight = `${window.innerWidth - document.querySelector('.wrapper').offsetWidth}px`;
     document.documentElement.classList.add('lock');
 
@@ -56,11 +62,11 @@ export const lockBody = (delay = 300) => {
   }
 };
 
-export const bodyLockToggle = (delay = 300) => {
+export const scrollLockToggle = (delay = 300) => {
   if (document.documentElement.classList.contains('lock')) {
-    unlockBody(delay);
+    unlockScroll(delay);
   } else {
-    lockBody(delay);
+    lockScroll(delay);
   }
 };
 //----------------------------------------------------------------------

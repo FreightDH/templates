@@ -1,4 +1,4 @@
-import { scrollLockStatus, scrollLockToggle, unlockScroll, lockScroll } from './functions.js';
+import { scrollLockStatus, scrollLockToggle, unlockScroll, lockScroll } from './scroll-lock';
 
 const initMenu = () => {
   if (document.querySelector('.menu__icon')) {

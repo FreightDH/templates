@@ -1,0 +1,78 @@
+@import './libs/swiper';
+
+$slideSize: 360px;
+$slideMinSize: ($minWidth - $containerPadding) + px;
+$spaceBetween: 15px;
+
+.slider {
+  padding: 40px 0;
+  position: relative;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+  }
+
+  &__title {
+    font-size: 40px;
+    @include adaptiveValue('font-size', 40, 25);
+    font-weight: 500;
+  }
+
+  &__swiper {
+  }
+}
+.swiper {
+  &__wrapper {
+    max-width: calc($slideSize * 3 + $spaceBetween * 2);
+
+    @media (max-width: $pc) {
+      max-width: calc($slideSize * 2 + $spaceBetween);
+    }
+
+    @media (max-width: $mobile) {
+      max-width: $slideSize;
+    }
+
+    @media (max-width: $mobileSmall) {
+      @include adaptiveValue('max-width', 360, 290, 479.98, 320); // первое значение - $slideSize
+    }
+  }
+
+  &__slide {
+    max-width: $slideSize;
+  }
+
+  &__navigation {
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+
+  &__button {
+    width: 60px;
+    height: 60px;
+    top: 45%;
+
+    background: url('@img/about/arrow.svg') center / cover no-repeat;
+  }
+
+  &__pagination {
+    margin: 30px 0px 0px 0px;
+    position: static;
+  }
+}
+
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+  left: -100px;
+}
+
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  right: -100px;
+}
