@@ -29,6 +29,7 @@
     "paths": {
       "app/*": ["app/*"],
       "pages/*": ["pages/*"],
+      "shared/*": ["shared/*"],
       "styles/*": ["styles/*"]
     }
   },
