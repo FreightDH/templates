@@ -1,16 +1,4 @@
-import { ReactElement } from 'react';
-import cl from './App.module.scss';
+import type { ReactElement } from 'react';
+import { ReactRouterProvider } from './provider';
 
-const App = (): ReactElement => {
-  return (
-    <>
-      <main className={cl.page}>
-        <div className="page__container">
-          <div className={cl.page__body}></div>
-        </div>
-      </main>
-    </>
-  );
-};
-
-export default App;
+export const App = (): ReactElement => <ReactRouterProvider />;

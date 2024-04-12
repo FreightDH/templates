@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier . --write",
-    "prepare": "cd .. && husky install blog-app/.husky"
+    "prepare": "cd .. && husky install /.husky"
   },
   "dependencies": {
     "react": "^18.2.0",

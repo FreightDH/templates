@@ -7,29 +7,25 @@
 //<ШРИФТЫ>
 $fontFamily: '';
 $fontSize: toRem(16);
-$mainColor: #353535;
+$mainColor: #000;
 //</ШРИФТЫ>
 
 //<ПЕРЕМЕННЫЕ>
 // Минимальная ширина страницы
 $minWidth: 320;
 // Ширина макета
-$maxWidth: 1170;
+$maxWidth: 1340;
 // Ширина ограничивающего контейнера (0 = нет ограничения)
-$maxWidthContainer: 1170;
+$maxWidthContainer: 1210;
 // Общий отступ у контейнера
 // (30 = по 15px слева и справа, 0 = нет отступа)
-$containerPadding: 30;
+$containerPadding: 130;
 
 // Ширина срабатывания первого брейкпоинта
 $containerWidth: $maxWidthContainer + $containerPadding;
 // Брейк-поинты
-$pc: toEm(
-  $containerWidth
-); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
-$tablet: toEm(
-  991.98
-); // Планшеты, некоторые телефоны в горизонтальном положении
+$pc: toEm($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: toEm(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
 $mobile: toEm(767.98); // Телефоны L
 $mobileSmall: toEm(479.98); // Телефоны S
 
@@ -99,17 +95,12 @@ body {
   width: 100%;
   min-height: 100%;
   overflow: hidden;
+
   // Прижимаем footer
-  /*
-	display: flex;
-	flex-direction: column;
-	> main {
-		flex: 1 1 auto;
-	} 
-	*/
+  display: flex;
+  flex-direction: column;
+  > main {
+    flex: 1 1 auto;
+  }
 }
 //</ОБОЛОЧКА>
-
-//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>
-@import 'common';
-//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>
