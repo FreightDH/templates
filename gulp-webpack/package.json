@@ -1,7 +1,7 @@
 {
   "name": "gulp-webpack-template-ts",
   "version": "1.0.0",
-  "description": "Template with Gulp and Webpack (TS Version)",
+  "description": "Template with Gulp and Webpack",
   "author": "Max Zolotkov",
   "private": true,
   "type": "module",
