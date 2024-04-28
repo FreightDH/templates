@@ -1,4 +1,4 @@
-import { scrollLockStatus, scrollLockToggle, unlockScroll, lockScroll } from './scroll-lock';
+import { scrollLockStatus, scrollLockToggle, unlockScroll, lockScroll } from './scroll-lock.js';
 
 export const initMenu = () => {
   if (document.querySelector('.menu__icon')) {
@@ -20,16 +20,16 @@ export const initMenu = () => {
       }
     });
   }
-}
+};
 
 export const openMenu = () => {
   lockScroll();
   document.documentElement.classList.add('menu-open');
   document.querySelector('.menu__body').classList.toggle('menu-open');
-}
+};
 
 export const closeMenu = () => {
   unlockScroll();
   document.documentElement.classList.remove('menu-open');
   document.querySelector('.menu__body').classList.toggle('menu-open');
-}
+};

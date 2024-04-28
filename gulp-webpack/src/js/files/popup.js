@@ -1,4 +1,4 @@
-import { lockScroll, scrollLockStatus, unlockScroll } from './scroll-lock';
+import { lockScroll, scrollLockStatus, unlockScroll } from './scroll-lock.js';
 
 export const openPopup = (popup) => {
   if (popup && scrollLockStatus) {

@@ -1,7 +1,6 @@
 import cleanCss from 'gulp-clean-css';
 import webpcss from 'gulp-webpcss';
 import autoprefixer from 'gulp-autoprefixer';
-import groupCssMediaQueries from 'gulp-group-css-media-queries';
 
 export const css = () => {
   return app.gulp
@@ -14,7 +13,6 @@ export const css = () => {
         })
       )
     )
-    .pipe(app.plugins.if(app.isBuild, groupCssMediaQueries()))
     .pipe(
       app.plugins.if(
         app.isBuild,
