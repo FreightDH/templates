@@ -1,7 +1,7 @@
-import cl from './Header.module.scss';
+import cl from './Footer.module.scss';
 
 export const Footer = () => {
   return (
-    <div></div>
+    <footer></footer>
   );
 };
