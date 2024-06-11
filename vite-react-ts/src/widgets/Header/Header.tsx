@@ -6,6 +6,10 @@ interface HeaderProps {}
 
 export const Header: FC<HeaderProps> = (): ReactElement => {
   return (
-    <div></div>
+    <header className={cl.header}>
+      <div className="header__container">
+        <div className={cl.header__body}></div>
+      </div>
+    </header>
   );
 };
