@@ -6,7 +6,7 @@ import { store } from '@/shared/store';
 import { ReactRouterProvider } from './provider';
 
 export const App = (): ReactElement => (
-  <Provider store={store}>
+  // <Provider store={store}>
     <ReactRouterProvider />
-  </Provider>
+  // </Provider>
 );

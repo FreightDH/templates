@@ -1,6 +1,6 @@
 import type { FC, ReactElement } from 'react';
 
-import cl from './Header.module.scss';
+import cl from './Footer.module.scss';
 
 interface FooterProps {}
 
