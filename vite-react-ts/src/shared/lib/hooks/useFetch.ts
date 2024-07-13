@@ -24,7 +24,7 @@ export const useFetch = (url: string) => {
         setIsLoading(false);
       }
     };
-    
+
     fetchData();
   }, []);
 

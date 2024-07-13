@@ -1,12 +1,5 @@
 import type { ReactElement } from 'react';
-import { Provider } from 'react-redux';
-
-import { store } from '@/shared/store';
 
 import { ReactRouterProvider } from './provider';
 
-export const App = (): ReactElement => (
-  // <Provider store={store}>
-    <ReactRouterProvider />
-  // </Provider>
-);
+export const App = (): ReactElement => <ReactRouterProvider />;
