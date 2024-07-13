@@ -20,16 +20,16 @@ export const initMenu = () => {
       }
     });
   }
-}
+};
 
 export const openMenu = () => {
   lockScroll();
   document.documentElement.classList.add('menu-open');
   document.querySelector('.menu__body').classList.toggle('menu-open');
-}
+};
 
 export const closeMenu = () => {
   unlockScroll();
   document.documentElement.classList.remove('menu-open');
   document.querySelector('.menu__body').classList.toggle('menu-open');
-}
+};
