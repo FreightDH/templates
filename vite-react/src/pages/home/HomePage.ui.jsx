@@ -1,5 +1,3 @@
 export const HomePage = () => {
-  return (
-    <main></main>
-  );
+  return <main></main>;
 };
